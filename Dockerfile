@@ -1,9 +1,9 @@
 FROM alpine:latest
-ARG SERVERFILE=CryoFall_Server_v0.22.1.11_NetCore
+ARG SERVERFILE=CryoFall_Server_v0.24.10.18_NetCore
 RUN wget "https://atomictorch.com/Files/${SERVERFILE}.zip" && \
     unzip -d / "${SERVERFILE}.zip"
 
-FROM mcr.microsoft.com/dotnet/core/runtime:2.1
+FROM mcr.microsoft.com/dotnet/core/runtime:3.1
 ARG SERVERFILE=CryoFall_Server_v0.24.10.18_NetCore
 ENV USER=cryofall USER_ID=999 USER_GID=999
 RUN mkdir /CryoFall
